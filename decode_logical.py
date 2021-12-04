@@ -141,8 +141,8 @@ def OP_5D(pcntr):
 # ANL A,R6: 5E   
 def OP_5E(pcntr):
 	"""ANL A,R6"""
-        UC.A = UC.hex2dec(UC.A) & UC.hex2dec(UC.R6)
-	UC.A=UC.dec2hex(UC.A)	
+	UC.A = UC.hex2dec(UC.A) & UC.hex2dec(UC.R6)
+	UC.A=UC.dec2hex(UC.A)
 	#length=1
 	#cycles=1
 	pcntr=pcntr+1
