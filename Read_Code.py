@@ -5,11 +5,11 @@ from Baseclass import *
 def Read_Code(filename):
 	f=open(filename)
 	asm_code=f.read().strip().upper()
-	print asm_code
+	print(asm_code)
 	asm_code_list=asm_code
 	#print asm_code_list
 	asm_code_list=asm_code_list.splitlines()
-	print asm_code_list
+	print(asm_code_list)
 	
 	f.close()
 	opcodes=[]
@@ -24,16 +24,16 @@ def Read_Code(filename):
 #			break		
 #		count=count+1
 	opcodes = decoderinst(asm_code_list)
-	print opcodes
+	print(opcodes)
 	
 	for n in range(0,len(opcodes)):
 		UC.ROM[n]=opcodes[n]
 
 	UC.PC=len(opcodes)
-	print UC.ROM[0:20]
-	print UC.PC
+	print(UC.ROM[0:20])
+	print(UC.PC)
 	
 	if UC.flag == 0:
 		UC.logcnt=UC.logcnt+1
 		UC.log[UC.logcnt]="Program completed successfully"
-		print UC.log[UC.logcnt]
+		print(UC.log[UC.logcnt])

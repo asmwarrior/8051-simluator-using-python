@@ -1,6 +1,6 @@
-from Tkinter import *
+from tkinter import *
 import string
-import Tkinter
+import tkinter
 import Pmw
 from Baseclass import *
 from decoder import *

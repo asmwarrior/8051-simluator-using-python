@@ -42,7 +42,7 @@ def splitinst(instr,opcode,lenopcode):
 	if len(temp) == 1:
 		return splitcs(temp[0])
 	else:
-		if temp[0].strip() in label_dict.keys():
+		if temp[0].strip() in list(label_dict.keys()):
 			opcode[int(UC.hex2dec(label_dict[temp[0].strip()]))] = UC.dec2hex(lenopcode)
 			label_dict[temp[0].strip()] = UC.dec2hex(lenopcode)
 		else:
@@ -124,7 +124,7 @@ def decode(instruction,opcode,lenopcode,count):
 				temp = temp + '-'
 				if instsplit[n] in sfrs_list:	#--- Decode SFR ---#
 					temp2.append(sfrs_dict[instsplit[n]])
-				elif instsplit[n] in label_dict.keys():
+				elif instsplit[n] in list(label_dict.keys()):
 					temp3 = label_dict[instsplit[n]]
 					temp2.append(temp3)
 				elif len(instsplit[n]) == 2:
@@ -159,6 +159,6 @@ def decoderinst(asm_code_list):
 		if UC.flag == 1:
 			break		
 		count += 1
-	print label_dict
+	print(label_dict)
 	return opcode
 #print opcode, label_dict
